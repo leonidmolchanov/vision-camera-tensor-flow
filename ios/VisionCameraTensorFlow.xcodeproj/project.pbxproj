@@ -6,6 +6,12 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C7F6BAFC290C55C100F6CD99 /* classify.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F6BAFB290C55C100F6CD99 /* classify.swift */; };
+		C7F6BAFF290C691400F6CD99 /* vision-camera-tensor-flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F6BAFE290C691400F6CD99 /* vision-camera-tensor-flow.swift */; };
+		C7F6BB01290C716000F6CD99 /* vision-camera-tensor-flow.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F6BB00290C716000F6CD99 /* vision-camera-tensor-flow.m */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		58B511D91A9E6C8500147676 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,8 +26,10 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libVisionCameraTensorFlow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVisionCameraTensorFlow.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		61338EF359E1520A7FAA53CB /* vision-camera-tensor-flow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "vision-camera-tensor-flow.swift"; path = "vision-camera-tensor-flow/vision-camera-tensor-flow.swift"; sourceTree = "<group>"; };
-		7158EE061E7A7A0C791F09FE /* vision-camera-tensor-flow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "vision-camera-tensor-flow.m"; path = "vision-camera-tensor-flow/vision-camera-tensor-flow.m"; sourceTree = "<group>"; };
+		C7F6BAFA290C55C100F6CD99 /* VisionCameraTensorFlow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VisionCameraTensorFlow-Bridging-Header.h"; sourceTree = "<group>"; };
+		C7F6BAFB290C55C100F6CD99 /* classify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classify.swift; sourceTree = "<group>"; };
+		C7F6BAFE290C691400F6CD99 /* vision-camera-tensor-flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "vision-camera-tensor-flow.swift"; sourceTree = "<group>"; };
+		C7F6BB00290C716000F6CD99 /* vision-camera-tensor-flow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "vision-camera-tensor-flow.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +62,10 @@
 		9E7315DC2547C557268D3B60 /* vision-camera-tensor-flow */ = {
 			isa = PBXGroup;
 			children = (
-				7158EE061E7A7A0C791F09FE /* vision-camera-tensor-flow.m */,
-				61338EF359E1520A7FAA53CB /* vision-camera-tensor-flow.swift */,
+				C7F6BAFE290C691400F6CD99 /* vision-camera-tensor-flow.swift */,
+				C7F6BB00290C716000F6CD99 /* vision-camera-tensor-flow.m */,
+				C7F6BAFB290C55C100F6CD99 /* classify.swift */,
+				C7F6BAFA290C55C100F6CD99 /* VisionCameraTensorFlow-Bridging-Header.h */,
 			);
 			name = "vision-camera-tensor-flow";
 			sourceTree = "<group>";
@@ -91,6 +101,7 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1400;
 					};
 				};
 			};
@@ -117,6 +128,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7F6BB01290C716000F6CD99 /* vision-camera-tensor-flow.m in Sources */,
+				C7F6BAFC290C55C100F6CD99 /* classify.swift in Sources */,
+				C7F6BAFF290C691400F6CD99 /* vision-camera-tensor-flow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,32 +251,41 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = VisionCameraTensorFlow;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "VisionCameraTensorFlow-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = VisionCameraTensorFlow;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "VisionCameraTensorFlow-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
